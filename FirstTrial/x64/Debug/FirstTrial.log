@@ -1,0 +1,4 @@
+﻿  GridBuilder.cpp
+C:\Users\joellehelgert\source\repos\FirstTrial\FirstTrial\GridBuilder.cpp(88,53): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\joellehelgert\source\repos\FirstTrial\FirstTrial\GridBuilder.cpp(90,54): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  FirstTrial.vcxproj -> C:\Users\joellehelgert\source\repos\FirstTrial\x64\Debug\FirstTrial.exe
