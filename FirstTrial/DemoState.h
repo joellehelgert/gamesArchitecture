@@ -1,0 +1,25 @@
+#pragma once
+
+#include <string>
+#include <Sge.h>
+
+class DemoState : public powidl::KeyPlum {
+public:
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param keyPath	the path to the data depot
+	 */
+	DemoState(const std::string & keyPath = "");
+
+	// Inherited via Plum
+	virtual void onFirstActivation() override;
+	virtual void onActivation() override;
+	virtual void onDeactivation() override;
+
+private:
+	// Add private members here.
+
+};
+
