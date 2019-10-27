@@ -85,9 +85,9 @@ shared_ptr<SpriteNode2D> GridBuilder::build() const
 	RecBuilder recBuilder = RecBuilder(m_context).setHeight(height).setWidth(width).setColor(m_color);
 
 	for (int i = 0; i < m_rows; i++) {
-		posX = (i * (m_width / m_rows)) - (m_width * 0.5) + ((width +m_margin) * 0.5);
+		posX = (i * (m_width / m_rows)) - (m_width * 0.5f) + ((width +m_margin) * 0.5f);
 		for (int y = 0; y < m_cols; y++) {
-			posY = y * (m_height / m_cols) - (m_height * 0.5) + ((height+ m_margin) * 0.5);
+			posY = y * (m_height / m_cols) - (m_height * 0.5f) + ((height+ m_margin) * 0.5f);
 			gridNode.addNode(recBuilder.setPos(posX, posY).build());
 		}
 	}
