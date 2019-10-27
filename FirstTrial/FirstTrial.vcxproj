@@ -30,7 +30,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -166,8 +166,11 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FFRenderer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="FlowField.cpp" />
-    <ClCompile Include="FlowFieldRenderer.cpp" />
     <ClCompile Include="GridBuilder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RecBuilder.cpp" />
@@ -177,8 +180,11 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="FFRenderer.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="FlowField.h" />
-    <ClInclude Include="FlowFieldRenderer.h" />
     <ClInclude Include="GridBuilder.h" />
     <ClInclude Include="RecBuilder.h" />
   </ItemGroup>
