@@ -30,7 +30,7 @@
     <ClCompile Include="FlowField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlowFieldRenderer.cpp">
+    <ClCompile Include="FFRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,16 +38,16 @@
     <ClInclude Include="RecBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DemoState.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="GridBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FlowField.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlowFieldRenderer.h">
+    <ClInclude Include="FFRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

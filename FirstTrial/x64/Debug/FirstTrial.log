@@ -1,4 +1,3 @@
-﻿  GridBuilder.cpp
-C:\Users\joellehelgert\source\repos\FirstTrial\FirstTrial\GridBuilder.cpp(88,53): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\joellehelgert\source\repos\FirstTrial\FirstTrial\GridBuilder.cpp(90,54): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  FirstTrial.vcxproj -> C:\Users\joellehelgert\source\repos\FirstTrial\x64\Debug\FirstTrial.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FirstTrial.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  FFRenderer.cpp
+  FirstTrial.vcxproj -> \\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\gamesArchitecture\x64\Debug\GamesArchitecture.exe
