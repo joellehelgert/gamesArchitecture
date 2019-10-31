@@ -1,10 +1,12 @@
 #include "DemoState.h"
 #include "RecBuilder.h"
 #include "GridBuilder.h"
+#include "FlowField2.h"
 #include "FFRenderer.h"
 
 using namespace std;
 using namespace powidl;
+
 
 DemoState::DemoState(const std::string & keyPath)
 	: KeyPlum(keyPath)
@@ -17,6 +19,8 @@ void DemoState::onFirstActivation()
 	// Add child Plums here...
 	addChild(usePlum<ISpriteSceneGraph2DFactory>().createSpriteSceneGraph2D());
 	addChild(usePlum<ICamera2DManagerFactory>().createCamera2DManager());
+	//auto ff = FlowField2::FlowField2();
+	//addChild(ff.createFlowField());
 	addChild(usePlum<FFRenderer>().createFFRenderer());
 }
 

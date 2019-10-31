@@ -27,10 +27,10 @@
     <ClCompile Include="GridBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlowField.cpp">
+    <ClCompile Include="FFRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FFRenderer.cpp">
+    <ClCompile Include="FlowField2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,13 +41,13 @@
     <ClInclude Include="GridBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlowField.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FFRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DemoState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlowField2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
