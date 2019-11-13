@@ -7,17 +7,13 @@ using namespace std;
 
 class FlowField2 : public powidl::Plum {
 public:
-
-	/**
-	 * Constructor.
-	 * 
-	 * @param keyPath	the path to the data depot
-	 */
 	FlowField2();
-
-	// shared_ptr<Vector2[]> getData();
-	std::shared_ptr<Plum> createFlowField();
-	void drawFF();
+	FlowField2(int rows, int cols, float width, float height);
+	
+	powidl::Vector2 getVectorAt(float x, float y);
+	powidl::Vector2 getVectorAt(powidl::Vector2 vec) {
+		return getVectorAt(vec.x, vec.y);
+	};
 
 	// Inherited via Plum
 	virtual void onFirstActivation() override;
@@ -25,11 +21,20 @@ public:
 	virtual void onDeactivation() override;
 
 private:
-	// Add private members here.
+	powidl::Vector2 convertIndexToCoordinates(int i);
+	int mapCoordinatesToIndex(int x, int y);
 	friend class FlowFieldRenderer;
+	float mapRealYToFF_Y(float y);
+	float mapRealXToFF_X(float x);
 
-	vector<powidl::Vector2> m_data;
+	std::shared_ptr<powidl::Vector2[]> m_data;
 	int m_rows;
 	int m_cols;
+	float m_width;
+	float m_height;
+	float m_unitX;
+	float m_unitY;
+	float m_offsetX;
+	float m_offsetY;
 };
 

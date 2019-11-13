@@ -23,7 +23,6 @@
     <ProjectGuid>{8d3228df-3dc7-4bf4-af10-54d47123605b}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>FirstTrial</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
     <ProjectName>GamesArchitecture</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -174,6 +173,14 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FFMoveableComponent.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="FFMoveableSystem.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GridBuilder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RecBuilder.cpp" />
@@ -188,6 +195,14 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="FlowField2.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="FFMoveableComponent.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="FFMoveableSystem.h">
       <SubType>
       </SubType>
     </ClInclude>

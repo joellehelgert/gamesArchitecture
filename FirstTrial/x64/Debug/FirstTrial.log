@@ -1,12 +1,3 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FirstTrial.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  DemoState.cpp
-  FFRenderer.cpp
-  FlowField2.cpp
-\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFRenderer.cpp(89,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FlowField2.cpp(21,16): warning C4244: 'initializing': conversion from 'int' to 'powidl::Real', possible loss of data
-  GridBuilder.cpp
-  main.cpp
-  RecBuilder.cpp
-  Generating Code...
-\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FlowField2.cpp(22,16): warning C4244: 'initializing': conversion from 'int' to 'powidl::Real', possible loss of data
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FirstTrial.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  FFMoveableSystem.cpp
   FirstTrial.vcxproj -> \\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\x64\Debug\GamesArchitecture.exe

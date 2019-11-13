@@ -3,7 +3,7 @@
 #include <string>
 #include <Sge.h>
 
-class DemoState : public powidl::KeyPlum {
+class DemoState : public powidl::KeyPlum, public powidl::IMouseListener {
 public:
 
 	/**
@@ -17,6 +17,7 @@ public:
 	virtual void onFirstActivation() override;
 	virtual void onActivation() override;
 	virtual void onDeactivation() override;
+	virtual bool onMouseButtonDown(int x, int y, int button) override;
 
 private:
 	// Add private members here.

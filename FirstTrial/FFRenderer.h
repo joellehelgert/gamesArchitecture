@@ -1,22 +1,20 @@
 #pragma once
 
 #include <string>
-#include <memory>
 #include <Sge.h>
+#include "FlowField2.h"
 
 using namespace powidl;
 
 class FFRenderer : public powidl::UpdatablePlum {
 public:
-
+	FFRenderer();
 	/**
 	 * Constructor.
 	 * 
 	 * @param timelineName	the name of the timeline to use
 	 */
-	FFRenderer(const std::string & timelineName = powidl::ITimekeeper::DEFAULT_TIMELINE_NAME);
-
-	std::shared_ptr<Plum> createFFRenderer();
+	FFRenderer(int rows, int cols, float width, float height, std::shared_ptr<FlowField2> ff);
 
 	// Inherited via Plum
 	virtual void onFirstActivation() override;
@@ -28,7 +26,7 @@ public:
 	int convertCoordinatesToIndex(float x, float y);
 
 	// Function to convert from array index to  x/y 
-	std::shared_ptr<Vector2> convertIndexToCoordinates(int i);
+	powidl::Vector2 convertIndexToCoordinates(int i);
 
 private:
 	/** The name of the timeline used by this Plum. */
@@ -48,12 +46,14 @@ private:
 
 	int m_rows;
 	int m_cols;
+	std::shared_ptr<FlowField2> m_ff;
 	float m_width;
 	float m_height;
 	float m_unitX;
 	float m_unitY;
 	float m_offsetX;
 	float m_offsetY;
+	float m_scale;
 	std::unique_ptr<Vector2[]> m_field;
 	
 	// Add additional private members here.
