@@ -2,6 +2,7 @@
 
 #include <string>
 #include <Sge.h>
+#include "Obstacle.h"
 
 using namespace std;
 
@@ -15,14 +16,18 @@ public:
 		return getVectorAt(vec.x, vec.y);
 	};
 
+	void addObstacle(powidl::Vector2 pos, Obstacle obstacle);
+
+	void removeObstacle(Obstacle obstacle);
+
 	// Inherited via Plum
 	virtual void onFirstActivation() override;
 	virtual void onActivation() override;
 	virtual void onDeactivation() override;
 
 private:
-	powidl::Vector2 convertIndexToCoordinates(int i);
-	int mapCoordinatesToIndex(int x, int y);
+	powidl::Vector2 mapIndexToCoordinates(int i);
+	int mapFFCoordinatesToIndex(int x, int y);
 	friend class FlowFieldRenderer;
 	float mapRealYToFF_Y(float y);
 	float mapRealXToFF_X(float x);

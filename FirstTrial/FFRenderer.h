@@ -33,6 +33,7 @@ private:
 	std::string m_timelineName;
 
 	int getIndexFromGrid(int x, int y);
+	int mapFFCoordinatesToIndex(int x, int y);
 
 	/** The timeline used by this Plum. */
 	std::shared_ptr<powidl::ITimeline> m_timeline;

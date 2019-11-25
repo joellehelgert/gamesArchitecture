@@ -3,7 +3,13 @@
 #include <string>
 #include <Sge.h>
 
-class DemoState : public powidl::KeyPlum, public powidl::IMouseListener {
+enum class PlayState {
+	setAgent,
+	setObstacle,
+	setTarget
+};
+
+class DemoState : public powidl::KeyPlum, public powidl::IMouseListener, public powidl::IKeyboardListener {
 public:
 
 	/**
@@ -18,9 +24,12 @@ public:
 	virtual void onActivation() override;
 	virtual void onDeactivation() override;
 	virtual bool onMouseButtonDown(int x, int y, int button) override;
+	virtual bool onKeyDown(powidl::Keycode code) override;
+	virtual bool onKeyUp(powidl::Keycode code) override;
 
 private:
 	// Add private members here.
+	PlayState m_playState;
 
 };
 

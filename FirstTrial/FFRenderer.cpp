@@ -8,7 +8,6 @@ using namespace powidl;
 
 FFRenderer::FFRenderer()
 {
-	// TODO Default flowfield with default render options
 }
 
 
@@ -24,29 +23,15 @@ FFRenderer::FFRenderer(int rows, int cols, float width, float height, std::share
 
 void FFRenderer::onFirstActivation()
 {
-	// TOTO: Add child Plums here...
-	addChild(usePlum<ISpriteSceneGraph2DFactory>().createSpriteSceneGraph2D());
-	addChild(usePlum<ICamera2DManagerFactory>().createCamera2DManager());
 	addChild(usePlum<ILineRenderer2DFactory>().createLineRenderer());
 
 
 	m_offsetX = (m_width / 2);
 	m_offsetY = m_height / 2;
 
-	m_field = std::make_unique<Vector2[]>(m_rows * m_cols);
 	m_unitX = m_width / (m_cols-1);
 	m_unitY = m_height / (m_rows-1);
 	m_scale = 0.10f;
-
-
-	for (int i = 0; i < m_rows * m_cols; i++) {
-		powidl::Vector2 vec = convertIndexToCoordinates(i);
-		if (vec.y > 250) {
-			m_field[i] = m_ff->getVectorAt(vec);
-		}
-		m_field[i] = m_ff->getVectorAt(vec);
-		
-	}
 
 }
 
@@ -73,11 +58,13 @@ void FFRenderer::update() {
 
 	for (int x = 0; x < m_cols; x++) {
 		for (int y = 0; y < m_rows; y++) {
-			Vector2 vec = m_field[getIndexFromGrid(x, y)] * m_scale;
+			int index = mapFFCoordinatesToIndex(x, y);
+			Vector2 RWCoor = convertIndexToCoordinates(index);
+			Vector2 vec = m_ff->getVectorAt(RWCoor) * m_scale;
 			Real posX = x * m_unitX - m_offsetX;
 			Real posY = y * m_unitY - m_offsetY;
 
-			lineRenderer.drawLine(posX, posY, posX + (vec.x * m_unitX), posY - (vec.y * m_unitY));
+			lineRenderer.drawLine(posX, posY, posX - (vec.x * m_unitX), posY - (vec.y * m_unitY));
 		}
 	}
 
@@ -85,6 +72,11 @@ void FFRenderer::update() {
 
 int FFRenderer::getIndexFromGrid(int x, int y) {
 	return m_cols * y + x;
+}
+
+int FFRenderer::mapFFCoordinatesToIndex(int x, int y)
+{
+	return y*m_cols -1 + x;
 }
 
 int FFRenderer::convertCoordinatesToIndex(float x, float y)

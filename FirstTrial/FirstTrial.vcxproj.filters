@@ -33,10 +33,16 @@
     <ClCompile Include="FlowField2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="FFMoveableSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FFMoveableComponent.cpp">
+    <ClCompile Include="ObstacleSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FFMoveable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,11 +62,25 @@
     <ClInclude Include="FlowField2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="FFMoveableSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FFMoveableComponent.h">
+    <ClInclude Include="ObstacleSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FFMoveable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GamesArchitecture.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

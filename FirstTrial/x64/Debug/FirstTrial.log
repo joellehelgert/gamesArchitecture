@@ -1,3 +1,4 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FirstTrial.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  FFMoveableSystem.cpp
+  FlowField2.cpp
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FlowField2.cpp(92,100): warning C4244: 'argument': conversion from 'int' to 'powidl::Real', possible loss of data
   FirstTrial.vcxproj -> \\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\x64\Debug\GamesArchitecture.exe

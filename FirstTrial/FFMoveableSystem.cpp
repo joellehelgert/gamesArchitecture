@@ -1,14 +1,12 @@
 #include "FFMoveableSystem.h"
 #include "FlowField2.h"
+#include "FFMoveable.h"
 
 using namespace std;
 using namespace powidl;
 
-
-// TODO Add required entity components to family
-// e.g., FAMILY = EntityFamily::create<Pose2D, SpriteVisual>(); 
 // sprite visual because i do not want to select all elements with pose2d, should be changed :D
-const EntityFamily FFMoveableSystem::FAMILY = EntityFamily::create<Pose2D, SpriteVisual>();
+const EntityFamily FFMoveableSystem::FAMILY = EntityFamily::create<Pose2D, SpriteVisual, FFMoveable>();
 
 FFMoveableSystem::FFMoveableSystem(const std::string& timelineName)
 	: IteratingEntitySystem(FAMILY, FAMILY, timelineName)
