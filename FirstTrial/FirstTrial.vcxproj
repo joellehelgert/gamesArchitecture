@@ -23,7 +23,6 @@
     <ProjectGuid>{8d3228df-3dc7-4bf4-af10-54d47123605b}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>FirstTrial</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
     <ProjectName>GamesArchitecture</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -166,13 +165,39 @@
       <SubType>
       </SubType>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="FFMoveable.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+=======
+>>>>>>> master
     <ClCompile Include="FFRenderer.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="FlowField2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="FFMoveableSystem.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+=======
     <ClCompile Include="FlowField.cpp" />
+>>>>>>> master
     <ClCompile Include="GridBuilder.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObstacleSystem.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="RecBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -180,13 +205,44 @@
       <SubType>
       </SubType>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="FFMoveable.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+=======
+>>>>>>> master
     <ClInclude Include="FFRenderer.h">
       <SubType>
       </SubType>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="FlowField2.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="FFMoveableSystem.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+=======
     <ClInclude Include="FlowField.h" />
+>>>>>>> master
     <ClInclude Include="GridBuilder.h" />
+    <ClInclude Include="ObstacleSystem.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="RecBuilder.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ViewsEnum.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GamesArchitecture.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

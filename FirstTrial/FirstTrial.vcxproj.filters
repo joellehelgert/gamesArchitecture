@@ -27,10 +27,26 @@
     <ClCompile Include="GridBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlowField.cpp">
+    <ClCompile Include="FFRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="FlowField2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FFMoveableSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstacleSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FFMoveable.cpp">
+=======
     <ClCompile Include="FFRenderer.cpp">
+>>>>>>> master
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -39,9 +55,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GridBuilder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FlowField.h">
+<<<<<<< HEAD
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FFRenderer.h">
@@ -50,5 +64,40 @@
     <ClInclude Include="DemoState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FlowField2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FFMoveableSystem.h">
+=======
+>>>>>>> master
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstacleSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="resource.h">
+=======
+    <ClInclude Include="FFRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoState.h">
+>>>>>>> master
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FFMoveable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewsEnum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GamesArchitecture.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
