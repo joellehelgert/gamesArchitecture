@@ -37,8 +37,8 @@ void FlowField2::onFirstActivation()
 	m_unitY = m_height / (m_rows - 1);
 
 	for (int i = 0; i < m_rows * m_cols; i++) {
-		Real randomX = randommizer();
-		Real randomY =randommizer();	
+		Real randomX = 0; //randommizer();
+		Real randomY = 0; // randommizer();
 		m_data[i] = powidl::Vector2(randomX, randomY);
 	}
 }
@@ -50,17 +50,22 @@ void FlowField2::onActivation()
 
 powidl::Vector2 FlowField2::getVectorAt(float x, float y)
 {
-	
 	float vectorsX = mapRealXToFF_X(x);
 	float vectorsY = mapRealYToFF_Y(y);
+
 	int left = static_cast<int>(floor(vectorsX));
 	int right = left + 1;
 	int top = static_cast<int>(floor(vectorsY));
 	int bottom = top + 1;
 
-	if (left == 4 && top == 4) {
-		auto test = 1;
+	if (vectorsY > 0) {
+		int test = 0;
 	}
+
+	int leftTopIndex = mapFFCoordinatesToIndex(left, top);
+	int leftBottomIndex = mapFFCoordinatesToIndex(left, bottom);
+	int rightTopIndex = mapFFCoordinatesToIndex(right, top);
+	int rightBottomIndex = mapFFCoordinatesToIndex(right, bottom);
 
 	Vector2 leftTop = m_data[mapFFCoordinatesToIndex(left, top)];
 	Vector2 leftBottom = m_data[mapFFCoordinatesToIndex(left, bottom)];
@@ -83,11 +88,11 @@ void FlowField2::addObstacle(powidl::Vector2 pos, Obstacle obstacle)
 		powidl::Vector2 position = mapIndexToCoordinates(index);
 		float distance = position.distance(pos) - obstacle.m_radius;
 
-		if (distance <= 0) {
+		if (distance < 1) {
 			distance = 1;
 		}
 
-		Vector2 direction = Vector2(pos.getX() - position.getX(), pos.getY() - position.getY());
+		Vector2 direction = pos - position;
 
 		powidl::Vector2 vec = direction * (obstacle.getStrength() / distance) * obstacle.getRepulsiveness();
 
@@ -95,8 +100,22 @@ void FlowField2::addObstacle(powidl::Vector2 pos, Obstacle obstacle)
 	}
 }
 
-void FlowField2::removeObstacle(Obstacle obstacle)
+void FlowField2::removeObstacle(powidl::Vector2 pos, Obstacle obstacle)
 {
+	for (int index = 0; index < m_rows * m_cols; index++) {
+		powidl::Vector2 position = mapIndexToCoordinates(index);
+		float distance = position.distance(pos) - obstacle.m_radius*2;
+
+		if (distance < 1) {
+			distance = 1;
+		}
+
+		Vector2 direction = pos - position;
+
+		powidl::Vector2 vec = direction * (obstacle.getStrength() / distance) * obstacle.getRepulsiveness() * -1;
+
+		m_data[index].sub(vec);
+	}
 }
 
 
@@ -119,7 +138,7 @@ int FlowField2::mapFFCoordinatesToIndex(int x, int y) {
 		corrigatedY = m_rows - 1;
 	}
 
-	return m_cols * corrigatedY + corrigatedX;
+	return (m_cols) * corrigatedY + corrigatedX;
 }
 
 float FlowField2::mapRealYToFF_Y(float y)
@@ -138,7 +157,7 @@ powidl::Vector2 FlowField2::mapIndexToCoordinates(int i)
 {
 	Real x = (i % m_cols) * m_unitX - m_width / 2;
 	// Real y = int((i + m_cols - 1) / m_cols) * m_unitY - m_height / 2; -> Andi rechnung
-	Real y = int((i / m_cols)) * m_unitY - m_height / 2;
+	Real y = static_cast<int>(i / (float)m_cols) * m_unitY - m_height / 2;
 
 	return powidl::Vector2(x, y);
 }

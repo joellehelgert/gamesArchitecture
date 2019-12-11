@@ -18,7 +18,7 @@ public:
 
 	void addObstacle(powidl::Vector2 pos, Obstacle obstacle);
 
-	void removeObstacle(Obstacle obstacle);
+	void removeObstacle(powidl::Vector2 pos, Obstacle obstacle);
 
 	// Inherited via Plum
 	virtual void onFirstActivation() override;

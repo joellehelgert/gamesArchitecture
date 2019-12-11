@@ -23,26 +23,18 @@ public:
 	virtual void update() override;
 
 	// Function to convert from x/y to array index
-	int convertCoordinatesToIndex(float x, float y);
 
-	// Function to convert from array index to  x/y 
-	powidl::Vector2 convertIndexToCoordinates(int i);
 
 private:
 	/** The name of the timeline used by this Plum. */
 	std::string m_timelineName;
 
-	int getIndexFromGrid(int x, int y);
 	int mapFFCoordinatesToIndex(int x, int y);
+	int mapRCoordinatesToIndex(float x, float y);
+	float mapFFYToRealY(int y);
+	float mapFFXToRealX(int x);
 
-	/** The timeline used by this Plum. */
 	std::shared_ptr<powidl::ITimeline> m_timeline;
-	
-	/**
-	 * Convenient method returning the current delta time.
-	 *
-	 * @return the elapsed time since the last update in seconds
-	 */
 	powidl::Real getDeltaTime() { m_timeline->getDeltaTime(); }
 
 	int m_rows;

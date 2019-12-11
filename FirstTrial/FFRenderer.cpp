@@ -46,8 +46,6 @@ void FFRenderer::onActivation()
 
 void FFRenderer::onDeactivation()
 {
-	// TOTO: Place cleanup code here...
-
 	// Reset point to timeline.
 	m_timeline.reset();
 }
@@ -58,28 +56,23 @@ void FFRenderer::update() {
 
 	for (int x = 0; x < m_cols; x++) {
 		for (int y = 0; y < m_rows; y++) {
-			int index = mapFFCoordinatesToIndex(x, y);
-			Vector2 RWCoor = convertIndexToCoordinates(index);
-			Vector2 vec = m_ff->getVectorAt(RWCoor) * m_scale;
-			Real posX = x * m_unitX - m_offsetX;
-			Real posY = y * m_unitY - m_offsetY;
+			float realX = mapFFXToRealX(x);
+			float realY = mapFFYToRealY(y);
+			Vector2 vec = m_ff->getVectorAt(realX, realY) * m_scale;
 
-			lineRenderer.drawLine(posX, posY, posX - (vec.x * m_unitX), posY - (vec.y * m_unitY));
+			lineRenderer.drawLine(realX, realY, realX - (vec.x * m_unitX), realY - (vec.y * m_unitY));
 		}
 	}
 
 }
 
-int FFRenderer::getIndexFromGrid(int x, int y) {
-	return m_cols * y + x;
-}
 
 int FFRenderer::mapFFCoordinatesToIndex(int x, int y)
 {
 	return y*m_cols -1 + x;
 }
 
-int FFRenderer::convertCoordinatesToIndex(float x, float y)
+int FFRenderer::mapRCoordinatesToIndex(float x, float y)
 {
 	float posX = round(x / m_unitX);
 	float posY = round(y / m_unitY);
@@ -88,13 +81,23 @@ int FFRenderer::convertCoordinatesToIndex(float x, float y)
 	return index;
 }
 
-
-powidl::Vector2 FFRenderer::convertIndexToCoordinates(int i)
+float FFRenderer::mapFFYToRealY(int y)
 {
-	Real x = (i % m_cols) * m_unitX - m_offsetX;
-	Real y = int(i / m_cols) * m_unitY - m_offsetY;
-
-	return powidl::Vector2(powidl::Vector2(x, y));
+	return y * m_unitY - m_offsetY;
 }
+
+float FFRenderer::mapFFXToRealX(int x)
+{
+	return x * m_unitX - m_offsetX;
+}
+
+
+//powidl::Vector2 FFRenderer::convertIndexToCoordinates(int i)
+//{
+//	Real x = (i % m_cols) * m_unitX - m_offsetX;
+//	Real y = int(i / m_cols) * m_unitY - m_offsetY;
+//
+//	return powidl::Vector2(powidl::Vector2(x, y));
+//}
 
 

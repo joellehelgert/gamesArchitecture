@@ -23,7 +23,7 @@ void DemoState::onFirstActivation()
 	// Add child Plums here...
 	addChild(usePlum<ISpriteSceneGraph2DFactory>().createSpriteSceneGraph2D());
 	// Zoomability
-	// addChild(std::make_shared<Camera2DControlPlum>());
+	//addChild(std::make_shared<Camera2DControlPlum>());
 	addChild(usePlum<ICamera2DManagerFactory>().createCamera2DManager());
 	addChild(std::make_shared<EntityManagerPlum>());
 	addChild(std::make_shared<FFMoveableSystem>());
@@ -33,9 +33,9 @@ void DemoState::onFirstActivation()
 
 	
 
-	std::shared_ptr<FlowField2> flowField = make_shared<FlowField2>(9, 9, 800, 800);
+	std::shared_ptr<FlowField2> flowField = make_shared<FlowField2>(50, 50, 500, 500);
 	addChild(flowField);
-	addChild(make_shared<FFRenderer>(90, 90, 800, 800, flowField));
+	addChild(make_shared<FFRenderer>(100, 100, 500, 500, flowField));
 	usePlum<IMouse>().addMouseListener(this);
 	usePlum<IKeyboard>().addKeyboardListener(this);
 	m_playState = PlayState::setAgent;
@@ -49,8 +49,8 @@ void DemoState::onActivation()
 	scene.addNode(SpriteNode2DBuilder(*this)
 		.addSprite(
 			RectangleSpriteBuilder(*this)
-			.width(800)
-			.height(800)
+			.width(250)
+			.height(250)
 			.color(StandardColors::BLUE_VIOLET)
 			.filled(false)
 			.lineWidth(3)
@@ -67,12 +67,21 @@ void DemoState::onActivation()
 		SpriteNode2DBuilder(*this)
 		.addSprite(
 			RectangleSpriteBuilder(*this)
-			.width(20)
-			.height(20)
-			.color(StandardColors::YELLOW)
+			.width(10)
+			.height(10)
+			.color(StandardColors::BLUE_VIOLET)
+			.build()
+		)
+		.addSprite(
+			CircleSpriteBuilder(*this)
+			.width(6)
+			.height(6)
+			.origin(-3, 3)
+			.color(StandardColors::ORANGE)
 			.build()
 		)
 		.build())
+		
 	);
 
 	usePlum<IEntityFactory>().addPrototype("agent", agent);
@@ -85,7 +94,7 @@ void DemoState::onActivation()
 		SpriteNode2DBuilder(*this)
 		.addSprite(
 			CircleSpriteBuilder(*this)
-			.radius(60)
+			.radius(3)
 			.color(StandardColors::ORANGE)
 			.filled(false)
 			.lineWidth(5)
@@ -94,10 +103,8 @@ void DemoState::onActivation()
 		.build())
 	);
 
-	obstacle->getComponent<Obstacle>().setStrength(5);
-	obstacle->getComponent<Pose2D>().setPos(20, 20);
+	obstacle->getComponent<Obstacle>().setStrength(1);
 	usePlum<IEntityFactory>().addPrototype("obstacle", obstacle);
-	/*usePlum<IEntityManager>().addEntity(obstacle);*/
 
 	// ---------- TARGET --------------
 	std::shared_ptr<Entity> target = std::make_shared<Entity>();
@@ -107,7 +114,7 @@ void DemoState::onActivation()
 		SpriteNode2DBuilder(*this)
 		.addSprite(
 			CircleSpriteBuilder(*this)
-			.radius(30)
+			.radius(3)
 			.color(StandardColors::GREEN)
 			.filled(false)
 			.lineWidth(2)
@@ -117,9 +124,8 @@ void DemoState::onActivation()
 	);
 
 	usePlum<IEntityFactory>().addPrototype("target", target);
-	target->getComponent<Obstacle>().setStrength(5);
+	target->getComponent<Obstacle>().setStrength(1);
 	target->getComponent<Obstacle>().setRepulsiveness(false);
-	usePlum<IEntityManager>().addEntity(target);
 }
 
 void DemoState::onDeactivation()

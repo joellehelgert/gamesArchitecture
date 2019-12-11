@@ -1,4 +1,12 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FirstTrial.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  FlowField2.cpp
-\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FlowField2.cpp(92,100): warning C4244: 'argument': conversion from 'int' to 'powidl::Real', possible loss of data
+  FFMoveableSystem.cpp
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(21,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(81,20): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(87,20): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(95,20): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(116,17): warning C4244: '+=': conversion from 'double' to 'powidl::Real', possible loss of data
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(123,19): warning C4244: 'argument': conversion from 'int' to 'powidl::Real', possible loss of data
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(133,54): warning C4244: '+=': conversion from 'double' to 'powidl::Real', possible loss of data
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(139,19): warning C4244: 'argument': conversion from 'int' to 'powidl::Real', possible loss of data
+\\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\FirstTrial\FFMoveableSystem.cpp(149,54): warning C4244: '+=': conversion from 'double' to 'powidl::Real', possible loss of data
   FirstTrial.vcxproj -> \\Mac\Home\Documents\FH\interactiveMedia\1Semester\gameArchitecture\x64\Debug\GamesArchitecture.exe

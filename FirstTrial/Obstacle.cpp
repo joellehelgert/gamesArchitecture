@@ -10,7 +10,7 @@ Obstacle::Obstacle()
 	m_radius = 40;
 }
 
-Obstacle::Obstacle(powidl::Real strength, bool repulsive, float radius)
+Obstacle::Obstacle(float strength, bool repulsive, float radius)
 {
 	m_strength = strength;
 	m_repulsive = repulsive;
@@ -28,7 +28,7 @@ int Obstacle::getRepulsiveness()
 	return m_repulsive ? -1 : 1;
 }
 
-powidl::Real Obstacle::getStrength()
+float Obstacle::getStrength()
 {
 	return m_strength;
 }
@@ -43,7 +43,7 @@ void Obstacle::setRepulsiveness(bool rep)
 	m_repulsive = rep;
 }
 
-void Obstacle::setStrength(powidl::Real s)
+void Obstacle::setStrength(float s)
 {
 	m_strength = s;
 }

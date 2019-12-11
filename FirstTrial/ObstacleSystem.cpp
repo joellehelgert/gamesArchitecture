@@ -46,5 +46,5 @@ void ObstacleSystem::onEntityRemoved(powidl::Entity & e)
 	shared_ptr<FlowField2> flowField = findPlum<FlowField2>();
 	Pose2D pose = e.getComponent<Pose2D>();
 	Obstacle obs = e.getComponent<Obstacle>();
-	flowField->removeObstacle(obs);
+	flowField->removeObstacle(pose.pos, obs);
 }

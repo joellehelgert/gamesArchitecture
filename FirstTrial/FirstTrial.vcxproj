@@ -225,6 +225,7 @@
     </ClInclude>
     <ClInclude Include="RecBuilder.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="ViewsEnum.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GamesArchitecture.rc" />
