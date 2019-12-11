@@ -165,14 +165,18 @@
       <SubType>
       </SubType>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="FFMoveable.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+=======
+>>>>>>> master
     <ClCompile Include="FFRenderer.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="FlowField2.cpp">
       <SubType>
       </SubType>
@@ -185,6 +189,9 @@
       <SubType>
       </SubType>
     </ClCompile>
+=======
+    <ClCompile Include="FlowField.cpp" />
+>>>>>>> master
     <ClCompile Include="GridBuilder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObstacleSystem.cpp">
@@ -198,14 +205,18 @@
       <SubType>
       </SubType>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="FFMoveable.h">
       <SubType>
       </SubType>
     </ClInclude>
+=======
+>>>>>>> master
     <ClInclude Include="FFRenderer.h">
       <SubType>
       </SubType>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="FlowField2.h">
       <SubType>
       </SubType>
@@ -218,6 +229,9 @@
       <SubType>
       </SubType>
     </ClInclude>
+=======
+    <ClInclude Include="FlowField.h" />
+>>>>>>> master
     <ClInclude Include="GridBuilder.h" />
     <ClInclude Include="ObstacleSystem.h">
       <SubType>

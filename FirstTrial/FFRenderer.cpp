@@ -1,11 +1,16 @@
 #include "FFRenderer.h"
+<<<<<<< HEAD
 #include "FlowField2.h"
 #include "GridBuilder.h"
 #include <math.h>  
+=======
+#include "GridBuilder.h"
+>>>>>>> master
 
 using namespace std;
 using namespace powidl;
 
+<<<<<<< HEAD
 FFRenderer::FFRenderer()
 {
 }
@@ -33,6 +38,34 @@ void FFRenderer::onFirstActivation()
 	m_unitY = m_height / (m_rows-1);
 	m_scale = 0.10f;
 
+=======
+Vector2* m_field;
+
+FFRenderer::FFRenderer(const std::string& timelineName)
+	: m_timelineName(timelineName)
+{
+	// Intentionally left empty
+	m_field = new Vector2[20];
+	
+	for (int i = 0; i < 20; i++) {
+		m_field[i] = Vector2(1,1);
+	}
+}
+
+std::shared_ptr<Plum> FFRenderer::createFFRenderer()
+{
+
+	return make_shared<FFRenderer>();
+}
+
+void FFRenderer::onFirstActivation()
+{
+	// TOTO: Add child Plums here...
+	addChild(usePlum<ISpriteSceneGraph2DFactory>().createSpriteSceneGraph2D());
+	addChild(usePlum<ICamera2DManagerFactory>().createCamera2DManager());
+	addChild(usePlum<ILineRenderer2DFactory>().createLineRenderer());
+
+>>>>>>> master
 }
 
 void FFRenderer::onActivation()
@@ -40,18 +73,31 @@ void FFRenderer::onActivation()
 	// Retrieve timeline used by this Plum
 	m_timeline = usePlum<ITimekeeper>().getOrCreateTimeline(m_timelineName);
 
+<<<<<<< HEAD
 	auto& scene = usePlum<ISpriteSceneGraph2D>();
 	//scene.addNode(GridBuilder(*this).setCols(m_cols-1).setRows(m_rows-1).setWidth(m_width).setHeight(m_height).setColor(StandardColors::DARK_RED).build());
+=======
+	// TOTO: Place initialization code here...
+	auto& scene = usePlum<ISpriteSceneGraph2D>();
+	scene.addNode(GridBuilder(*this).setCols(20).setRows(20).setWidth(800).setHeight(800).setColor(StandardColors::BISQUE).build());
+
+>>>>>>> master
 }
 
 void FFRenderer::onDeactivation()
 {
+<<<<<<< HEAD
+=======
+	// TOTO: Place cleanup code here...
+
+>>>>>>> master
 	// Reset point to timeline.
 	m_timeline.reset();
 }
 
 void FFRenderer::update() {
 	auto& lineRenderer = usePlum<ILineRenderer2D>();
+<<<<<<< HEAD
 	lineRenderer.setColor(StandardColors::WHITE);
 
 	for (int x = 0; x < m_cols; x++) {
@@ -101,3 +147,10 @@ float FFRenderer::mapFFXToRealX(int x)
 //}
 
 
+=======
+	for (Real i = 0; i > m_field->length(); i++) {
+		lineRenderer.drawLine(i, i, 50, 50);
+	}
+}
+
+>>>>>>> master

@@ -1,11 +1,15 @@
 #include "DemoState.h"
 #include "RecBuilder.h"
 #include "GridBuilder.h"
+<<<<<<< HEAD
 #include "FlowField2.h"
 #include "FFRenderer.h"
 #include "FFMoveable.h"
 #include "FFMoveableSystem.h"
 #include "ObstacleSystem.h"
+=======
+#include "FFRenderer.h"
+>>>>>>> master
 
 using namespace std;
 using namespace powidl;
@@ -25,6 +29,7 @@ void DemoState::onFirstActivation()
 	// Zoomability
 	//addChild(std::make_shared<Camera2DControlPlum>());
 	addChild(usePlum<ICamera2DManagerFactory>().createCamera2DManager());
+<<<<<<< HEAD
 	addChild(std::make_shared<EntityManagerPlum>());
 	addChild(std::make_shared<FFMoveableSystem>());
 	addChild(std::make_shared<ObstacleSystem>());
@@ -39,12 +44,16 @@ void DemoState::onFirstActivation()
 	usePlum<IMouse>().addMouseListener(this);
 	usePlum<IKeyboard>().addKeyboardListener(this);
 	m_playState = PlayState::setAgent;
+=======
+	addChild(usePlum<FFRenderer>().createFFRenderer());
+>>>>>>> master
 }
 
 
 void DemoState::onActivation()
 {
 	auto& scene = usePlum<ISpriteSceneGraph2D>();
+<<<<<<< HEAD
 
 	scene.addNode(SpriteNode2DBuilder(*this)
 		.addSprite(
@@ -126,6 +135,12 @@ void DemoState::onActivation()
 	usePlum<IEntityFactory>().addPrototype("target", target);
 	target->getComponent<Obstacle>().setStrength(1);
 	target->getComponent<Obstacle>().setRepulsiveness(false);
+=======
+	// Place initialization code here...
+	
+	// scene.addNode(RecBuilder(*this).setHeight(200).setWidth(200).setColor(StandardColors::CORAL).setPos(0, 0).build());
+	// scene.addNode(GridBuilder(*this).setCols(10).setRows(10).setWidth(200).setHeight(200).setColor(StandardColors::BISQUE).build());
+>>>>>>> master
 }
 
 void DemoState::onDeactivation()
